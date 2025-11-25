@@ -8,7 +8,7 @@ This project applies advanced mathematical statistics to the NASA Kepler Mission
 
 This analysis covers five core statistical concepts implemented in Python:
 
-1. **Bayesian Reliability:** Calculating the False Positive Probability (FPP) of faint signals using Bayes' Theorem ($P(C|L)$).
+1. **Bayesian Reliability:** Calculating the False Positive Probability (FPP) of faint signals using Bayes' Theorem.
 2. **Distributions:** Modeling planetary radii using **Normal (Gaussian)** distributions and predicting mission success rates using **Binomial** distributions.
 3. **Moments:** Using **Skewness** and **Kurtosis** to infer the physical mass function of the galaxy and validate the Core Accretion theory.
 4. **Sampling:** Verifying the **Central Limit Theorem (CLT)** to justify the use of parametric tests on non-normal data.
