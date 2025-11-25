@@ -1,80 +1,85 @@
-The Statistical Probability of Earth 2.0 🌍
+# The Statistical Probability of Earth 2.0 🌍
 
-A Rigorous Statistical Audit of Exoplanetary Populations
+### A Rigorous Statistical Audit of Exoplanetary Populations
 
-This project applies advanced mathematical statistics to the NASA Kepler Mission dataset ($N > 7,000$ objects) to answer a fundamental astronomical question: "How statistically unique is the Earth?" By combining Probability Theory with Astrophysics, we characterize the population of exoplanets and mathematically test the likelihood of finding another Earth-sized planet in the Habitable Zone.
+This project applies advanced mathematical statistics to the NASA Kepler Mission dataset ($N > 7,000$ objects) to answer a fundamental astronomical question: **"How statistically unique is the Earth?"** By combining Probability Theory with Astrophysics, we characterize the population of exoplanets and mathematically test the likelihood of finding another Earth-sized planet in the Habitable Zone.
 
-📊 Mathematical Framework
+## 📊 Mathematical Framework
 
 This analysis covers five core statistical concepts implemented in Python:
 
-Bayesian Reliability: Calculating the False Positive Probability (FPP) of faint signals using Bayes' Theorem.
+1. **Bayesian Reliability:** Calculating the False Positive Probability (FPP) of faint signals using Bayes' Theorem ($P(C|L)$).
+2. **Distributions:** Modeling planetary radii using **Normal (Gaussian)** distributions and predicting mission success rates using **Binomial** distributions.
+3. **Moments:** Using **Skewness** and **Kurtosis** to infer the physical mass function of the galaxy and validate the Core Accretion theory.
+4. **Sampling:** Verifying the **Central Limit Theorem (CLT)** to justify the use of parametric tests on non-normal data.
+5. **Hypothesis Testing:** Performing a **One-Sample Z-Test** at 1% and 5% significance levels to scientifically prove the dominance of "Super-Earths" over Earth-sized planets.
 
-Distributions: Modeling planetary radii using Normal (Gaussian) and Binomial distributions.
+## 🛠️ Prerequisites
 
-Moments: Using Skewness and Kurtosis to validate the Core Accretion theory of planet formation.
+You need **Python 3.x** and the following scientific libraries. You can install them via pip:
 
-Sampling: Verifying the Central Limit Theorem (CLT) to justify parametric testing.
-
-Hypothesis Testing: Performing a One-Sample Z-Test at 1% and 5% significance levels to prove the "Super-Earth" dominance.
-
-🛠️ Prerequisites
-
-You need Python 3.x and the following scientific libraries:
-
+```bash
 pip install pandas numpy scipy matplotlib seaborn
+```
 
-
-📂 Data Setup (Crucial Step)
+## 📂 Data Setup (Crucial Step)
 
 The scripts rely on the Kepler Cumulative Object of Interest (KOI) table. Due to file size limits and API stability, you must download this manually:
 
 Go to the NASA Exoplanet Archive.
 
-In the top-left corner, click Download Table $\to$ CSV Format.
+In the top-left corner, click the Download Table button.
 
-Rename the downloaded file to: kepler_data.csv
+Select CSV Format.
 
-Move this file into the root folder of this project (same folder as the python scripts).
+Rename the downloaded file to exactly: kepler_data.csv
 
-🚀 How to Run the Analysis
+Move this file into the root folder of this project (the same folder where the python scripts are located).
 
-The project is divided into 5 chapters, corresponding to the statistical progression of the report. Run them in order:
+## 🚀 How to Run the Analysis
 
-Chapter 1: Reliability Analysis
-Calculates Bayesian probabilities for signal detection.
+The project is divided into 5 chapters, corresponding to the statistical progression of the research. Run them in order to generate the analysis and graphs:
 
+### 1. Reliability Analysis
+   
+Calculates Bayesian probabilities for signal detection based on Signal-to-Noise Ratios.
+
+```bash
 python chapter_1.py
+```
 
+### 2. Distributions & Modeling
+   
+Fits the Normal distribution to planetary radii and calculates Binomial probabilities for future mission planning.
 
-Chapter 2: Distributions
-Fits the Normal distribution to planet radii and calculates Binomial probability for future missions.
-
+```bash
 python chapter_2.py
+```
 
+### 3. Population Characterization
+   
+Calculates the 3rd and 4th Moments (Skewness/Kurtosis) to infer planet formation physics.
 
-Chapter 3: Moments
-Calculates Skewness and Kurtosis to infer planet formation physics.
-
+```bash
 python chapter_3.py
+```
 
+### 4. Correlation & Sampling
+   
+Tests the Central Limit Theorem (CLT) and analyzes correlations between star size and planetary orbital periods.
 
-Chapter 4: Correlation & Sampling
-Tests the Central Limit Theorem and correlations between star size and planetary orbit.
-
+```bash
 python chapter_4.py
+```
 
+### 5. Hypothesis Testing
+ 
+The final statistical proof. Performs a Z-Test to determine if the average habitable planet is Earth-sized.
 
-Chapter 5: Hypothesis Testing
-The final Z-Test proving whether the average habitable planet is Earth-sized.
-
+```bash
 python chapter_5.py
+```
 
-
-📄 Project Report
-
-A complete academic report (report.pdf) generated via LaTeX is available in this repository, detailing the methodology, mathematical derivations, and physical interpretations of the results.
-
-📜 License
+## 📜 License & Data Source
 
 This project uses public data from the NASA Exoplanet Archive, which is operated by the California Institute of Technology, under contract with the National Aeronautics and Space Administration under the Exoplanet Exploration Program.
