@@ -1,8 +1,7 @@
 import pandas as pd
 import numpy as np
 
-# --- UPDATED LOADING SECTION ---
-# We now look for the file on your computer to avoid HTTP 404 errors.
+# --- LOADING SECTION ---
 try:
     print("Loading data from local file...")
     # skip_footer is needed because NASA CSVs sometimes have citation text at the bottom
@@ -15,7 +14,6 @@ except FileNotFoundError:
     exit()
 
 # --- DATA CLEANING ---
-# NASA column names can be tricky. Let's ensure we have the right ones.
 # We filter for CONFIRMED planets and FALSE POSITIVES
 df = df[df['koi_disposition'].isin(['CONFIRMED', 'FALSE POSITIVE'])]
 df = df.dropna(subset=['koi_model_snr', 'koi_disposition'])
@@ -23,8 +21,7 @@ df = df.dropna(subset=['koi_model_snr', 'koi_disposition'])
 N = len(df)
 print(f"Total Sample Size (N): {N}")
 
-# --- THE MATH (Same as before) ---
-
+# --- THE MATH ---
 # Partitioning Signal-to-Noise Ratio (SNR)
 df['SNR_Bin'] = pd.cut(df['koi_model_snr'], 
                        bins=[0, 10, 100, 1000000], 
